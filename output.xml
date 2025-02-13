@@ -1,113 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-13T14:17:43.295271" rpa="false" schemaversion="5">
-<suite id="s1" name="Login" source="C:\robotframework\Login.robot">
-<test id="s1-t1" name="Login With Valid Credentials" line="10">
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-13T17:31:43.701596" rpa="false" schemaversion="5">
+<suite id="s1" name="Cart" source="C:\robotframework\Cart.robot">
+<test id="s1-t1" name="Add Product to Cart" line="9">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-13T14:17:43.544977" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
-<arg>https://www.saucedemo.com/</arg>
-<arg>firefox</arg>
+<msg time="2025-02-13T17:31:43.994349" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${BASEURL}</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-13T14:17:43.544773" elapsed="7.997862"/>
+<status status="PASS" start="2025-02-13T17:31:43.993539" elapsed="9.194801"/>
 </kw>
 <kw name="Login With Credentials" owner="LoginResource">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-13T14:17:51.545934" level="INFO">Typing text 'standard_user' into text field 'css=[data-test="username"]'.</msg>
+<msg time="2025-02-13T17:31:53.190965" level="INFO">Typing text 'standard_user' into text field 'css=[data-test="username"]'.</msg>
 <arg>css=[data-test="username"]</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-13T14:17:51.544978" elapsed="0.262585"/>
+<status status="PASS" start="2025-02-13T17:31:53.190437" elapsed="0.180289"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-13T14:17:51.808296" level="INFO">Typing text 'secret_sauce' into text field 'css=[data-test="password"]'.</msg>
+<msg time="2025-02-13T17:31:53.371569" level="INFO">Typing text 'secret_sauce' into text field 'css=[data-test="password"]'.</msg>
 <arg>css=[data-test="password"]</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-13T14:17:51.807883" elapsed="0.138670"/>
+<status status="PASS" start="2025-02-13T17:31:53.371116" elapsed="0.092508"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-13T14:17:51.947239" level="INFO">Clicking button 'css=[data-test="login-button"]'.</msg>
+<msg time="2025-02-13T17:31:53.464494" level="INFO">Clicking button 'css=[data-test="login-button"]'.</msg>
 <arg>css=[data-test="login-button"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-13T14:17:51.946892" elapsed="0.306796"/>
+<status status="PASS" start="2025-02-13T17:31:53.464044" elapsed="0.334022"/>
 </kw>
 <arg>${validusername}</arg>
 <arg>${validpassword}</arg>
-<status status="PASS" start="2025-02-13T14:17:51.543698" elapsed="0.710118"/>
+<status status="PASS" start="2025-02-13T17:31:53.189617" elapsed="0.608656"/>
 </kw>
 <kw name="Verify Login Success" owner="LoginResource">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-02-13T14:17:52.284590" level="INFO">Current page contains text 'Products'.</msg>
+<msg time="2025-02-13T17:31:53.814947" level="INFO">Current page contains text 'Products'.</msg>
 <arg>Products</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-02-13T14:17:52.254609" elapsed="0.030226"/>
+<status status="PASS" start="2025-02-13T17:31:53.799700" elapsed="0.015435"/>
 </kw>
-<status status="PASS" start="2025-02-13T14:17:52.254265" elapsed="0.030766"/>
+<status status="PASS" start="2025-02-13T17:31:53.798992" elapsed="0.016338"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-13T14:17:52.285493" elapsed="2.934573"/>
+<kw name="Add Product" owner="CartResource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-13T17:31:53.817147" level="INFO">Clicking element 'css=[data-test="add-to-cart-sauce-labs-backpack"]'.</msg>
+<arg>css=[data-test="add-to-cart-sauce-labs-backpack"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T17:31:53.816752" elapsed="0.228612"/>
 </kw>
-<status status="PASS" start="2025-02-13T14:17:43.543856" elapsed="11.676521"/>
-</test>
-<test id="s1-t2" name="Login With Invalid Credentials" line="16">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-13T14:17:55.221558" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
-<arg>https://www.saucedemo.com/</arg>
-<arg>firefox</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-13T14:17:55.221401" elapsed="7.407412"/>
+<status status="PASS" start="2025-02-13T17:31:53.815962" elapsed="0.229512"/>
 </kw>
-<kw name="Login With Credentials" owner="LoginResource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-13T14:18:02.633828" level="INFO">Typing text 'abc' into text field 'css=[data-test="username"]'.</msg>
-<arg>css=[data-test="username"]</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-13T14:18:02.632934" elapsed="0.266813"/>
+<kw name="Open Cart" owner="CartResource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-13T17:31:54.046314" level="INFO">Clicking element 'css=[data-test="shopping-cart-link"]'.</msg>
+<arg>css=[data-test="shopping-cart-link"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T17:31:54.046156" elapsed="0.239525"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-13T14:18:02.901227" level="INFO">Typing text '123' into text field 'css=[data-test="password"]'.</msg>
-<arg>css=[data-test="password"]</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-13T14:18:02.900149" elapsed="0.137196"/>
+<status status="PASS" start="2025-02-13T17:31:54.045875" elapsed="0.240044"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-13T14:18:03.037766" level="INFO">Clicking button 'css=[data-test="login-button"]'.</msg>
-<arg>css=[data-test="login-button"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-13T14:18:03.037565" elapsed="0.248738"/>
-</kw>
-<arg>${invalidusername}</arg>
-<arg>${invalidpassword}</arg>
-<status status="PASS" start="2025-02-13T14:18:02.631762" elapsed="0.654763"/>
-</kw>
-<kw name="Verify Login Success" owner="LoginResource">
+<kw name="Verify Product Added" owner="CartResource">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-02-13T14:18:03.365476" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-02-13T14:18:03.365822" level="FAIL">Page should have contained text 'Products' but did not.</msg>
-<arg>Products</arg>
+<msg time="2025-02-13T17:31:54.293492" level="INFO">Current page contains text 'Sauce Labs Backpack'.</msg>
+<arg>Sauce Labs Backpack</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="FAIL" start="2025-02-13T14:18:03.287714" elapsed="0.081099">Page should have contained text 'Products' but did not.</status>
+<status status="PASS" start="2025-02-13T17:31:54.286640" elapsed="0.006992"/>
 </kw>
-<status status="FAIL" start="2025-02-13T14:18:03.287219" elapsed="0.081897">Page should have contained text 'Products' but did not.</status>
+<status status="PASS" start="2025-02-13T17:31:54.286364" elapsed="0.007399"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-02-13T14:18:03.369503" elapsed="0.000054"/>
+<status status="PASS" start="2025-02-13T17:31:54.294050" elapsed="2.966573"/>
 </kw>
-<status status="FAIL" start="2025-02-13T14:17:55.221033" elapsed="8.148931">Page should have contained text 'Products' but did not.</status>
+<status status="PASS" start="2025-02-13T17:31:43.991975" elapsed="13.268998"/>
 </test>
-<status status="FAIL" start="2025-02-13T14:17:43.296844" elapsed="20.074281"/>
+<status status="PASS" start="2025-02-13T17:31:43.703386" elapsed="13.558580"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Login" id="s1" pass="1" fail="1" skip="0">Login</stat>
+<stat name="Cart" id="s1" pass="1" fail="0" skip="0">Cart</stat>
 </suite>
 </statistics>
 <errors>

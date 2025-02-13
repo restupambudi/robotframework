@@ -12,4 +12,4 @@ Verify Login Success
     Page Should Contain    Products
 
 Verify Login Failure
-    Page Should Contain    Epic sadface: Username and password do not match any user in this service
+    Page Should Contain    Username and password do not match

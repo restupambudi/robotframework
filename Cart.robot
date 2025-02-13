@@ -3,19 +3,14 @@ Library    SeleniumLibrary
 Variables    credentials.py
 Variables    environments.py
 Resource    LoginResource.robot
-
-*** Variables ***
-
+Resource    CartResource.robot
 
 *** Test Cases ***
-Login With Valid Credentials
+Add Product to Cart
     Open Browser    ${BASEURL}    ${BROWSER}
     Login With Credentials    ${validusername}    ${validpassword}
     Verify Login Success
-    Close Browser
-
-Login With Invalid Credentials
-    Open Browser    ${BASEURL}    ${BROWSER}
-    Login With Credentials    ${invalidusername}    ${invalidpassword}
-    Verify Login Failure
-    Close Browser    
+    Add Product
+    Open Cart
+    Verify Product Added
+    Close Browser   
